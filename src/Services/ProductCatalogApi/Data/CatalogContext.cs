@@ -18,7 +18,7 @@ namespace ProductCatalogApi.Data {
         private void ConfigureCatalogType (EntityTypeBuilder<CatalogType> builder) {
             builder.ToTable ("CatlogType");
             builder.Property (x => x.Id)
-                .ForSqlServerUseSequenceHiLo ("catalog_hilo")
+                .ForSqlServerUseSequenceHiLo ("catalog_type_hilo")
                 .IsRequired (true);
             builder.Property (x => x.Type)
                 .IsRequired (true)
@@ -28,7 +28,7 @@ namespace ProductCatalogApi.Data {
         private void ConfigureCatalogItem (EntityTypeBuilder<CatalogItem> builder) {
             builder.ToTable ("Catalog");
             builder.Property (x => x.Id)
-                .ForSqlServerUseSequenceHiLo ("catalog_hilo")
+                .ForSqlServerUseSequenceHiLo ("catalog_item_hilo")
                 .IsRequired (true);
             builder.Property (x => x.Name)
                 .IsRequired (true)
@@ -48,7 +48,7 @@ namespace ProductCatalogApi.Data {
         private void ConfigureCatalogBrand (EntityTypeBuilder<CatalogBrand> builder) {
             builder.ToTable ("CatlogBrand");
             builder.Property (x => x.Id)
-                .ForSqlServerUseSequenceHiLo ("catalog_hilo")
+                .ForSqlServerUseSequenceHiLo ("catalog_brand_hilo")
                 .IsRequired (true);
             builder.Property (x => x.Brand)
                 .IsRequired (true)

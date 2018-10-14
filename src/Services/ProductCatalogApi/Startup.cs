@@ -25,8 +25,8 @@ namespace ProductCatalogApi {
         public void ConfigureServices (IServiceCollection services) {
             services.AddDbContext<CatalogContext> (o => o.UseSqlServer (Configuration["ConnectionString"]));
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
-        }
 
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure (IApplicationBuilder app, IHostingEnvironment env) {
             if (env.IsDevelopment ()) {
@@ -34,8 +34,11 @@ namespace ProductCatalogApi {
             } else {
                 app.UseHsts ();
             }
-
-            app.UseHttpsRedirection ();
+            using (var scope = app.ApplicationServices.CreateScope ()) {
+                var ctx = scope.ServiceProvider.GetService<CatalogContext> ();
+                CatalogSeed.SeedAsync (ctx).Wait ();
+            }
+            //app.UseHttpsRedirection ();
             app.UseMvc ();
         }
     }

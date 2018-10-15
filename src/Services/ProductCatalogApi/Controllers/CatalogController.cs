@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,18 @@ namespace ProductCatalogApi.Controllers {
 
             var items = await CatalogDb.CatalogBrands.ToListAsync ();
             return Ok (items);
+        }
+
+        [HttpGet]
+        [Route ("item/{id:int}")]
+        public async Task<IActionResult> GettemById (int id) {
+            if (id <= 0) return BadRequest ();
+            var item = await CatalogDb.CatalogItems.Where (x => x.Id == id).FirstOrDefaultAsync ();
+            if (item != null) {
+                item.PictureUrl = item.PictureUrl.Replace ("http://externalcatalogbaseurltobereplaced", Config.Value.ExternalCatalogBaseUrl);
+                return Ok (item);
+            }
+            return NotFound ();
         }
     }
 }

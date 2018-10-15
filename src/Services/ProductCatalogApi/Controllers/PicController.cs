@@ -21,5 +21,7 @@ namespace ProductCatalogApi.Controllers {
             var buffer = System.IO.File.ReadAllBytes (path);
             return File (buffer, "images/png");
         }
+
+
     }
 }

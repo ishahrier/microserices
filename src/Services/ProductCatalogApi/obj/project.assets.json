@@ -11625,11 +11625,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\ronfx\\microservices\\src\\Services\\ProductCatalogApi\\ProductCatalogApi.csproj",
+      "projectUniqueName": "C:\\Users\\ronfx\\microservices\\src\\Services\\ProductCatalogApi\\ProductCatalogApi.csproj",
       "projectName": "ProductCatalogApi",
-      "projectPath": "c:\\Users\\ronfx\\microservices\\src\\Services\\ProductCatalogApi\\ProductCatalogApi.csproj",
+      "projectPath": "C:\\Users\\ronfx\\microservices\\src\\Services\\ProductCatalogApi\\ProductCatalogApi.csproj",
       "packagesPath": "C:\\Users\\ronfx\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\ronfx\\microservices\\src\\Services\\ProductCatalogApi\\obj\\",
+      "outputPath": "C:\\Users\\ronfx\\microservices\\src\\Services\\ProductCatalogApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

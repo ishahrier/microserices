@@ -23,14 +23,14 @@ namespace ProductCatalogApi.Controllers {
         }
 
         [HttpGet]
-        [Route ("{[action]}")]
+        [Route ("[action]")]
         public async Task<IActionResult> CatalogTypes () {
             var items = await CatalogDb.CatalogTypes.ToListAsync ();
             return Ok (items);
         }
 
         [HttpGet]
-        [Route ("{[action]}")]
+        [Route ("[action]")]
         public async Task<IActionResult> CatalogBrands () {
 
             var items = await CatalogDb.CatalogBrands.ToListAsync ();
@@ -63,7 +63,7 @@ namespace ProductCatalogApi.Controllers {
             var model = new PaginatedItemsViewModel<CatalogItem> (pageIndex, pageIndex, totalItem, itemsOnPage);
             return Ok (model);
         }
-
+            
         [HttpGet]
         [Route ("[action]/withname/{name:minlength(1)}")]
         public async Task<IActionResult> Items (string name, [FromQuery] int pageSize = 6, [FromQuery] int pageIndex = 0) {

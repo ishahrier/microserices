@@ -26,7 +26,15 @@ namespace ProductCatalogApi {
             services.Configure<CatalogSettings> (Configuration);
             services.AddDbContext<CatalogContext> (o => o.UseSqlServer (Configuration["ConnectionString"]));
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
-
+            services.AddSwaggerGen(Options=>{
+                Options.DescribeAllEnumsAsStrings();
+                Options.SwaggerDoc("v1",new Swashbuckle.AspNetCore.Swagger.Info{
+                    Title = "Shoes on container - Product Catalog HTTP API",
+                    Version = "v1",
+                    Description = "The product catalog microservices HTTP API.",
+                    TermsOfService = "It is free and open source"
+                });
+            });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure (IApplicationBuilder app, IHostingEnvironment env) {
@@ -39,6 +47,10 @@ namespace ProductCatalogApi {
                 var ctx = scope.ServiceProvider.GetService<CatalogContext> ();
                 CatalogSeed.SeedAsync (ctx).Wait ();
             }
+            app.UseSwagger()
+            .UseSwaggerUI(
+                c=>c.SwaggerEndpoint($"/swagger/v1/swagger.json","ProductCatalogAPI V1")
+            );
             //app.UseHttpsRedirection ();
             app.UseMvc ();
         }

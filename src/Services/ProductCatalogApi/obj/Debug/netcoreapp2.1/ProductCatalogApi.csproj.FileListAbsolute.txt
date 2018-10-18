@@ -12,3 +12,17 @@ C:\Users\ronni\Desktop\microservice\src\Services\ProductCatalogApi\obj\Debug\net
 C:\Users\ronni\Desktop\microservice\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.RazorTargetAssemblyInfo.cache
 C:\Users\ronni\Desktop\microservice\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.dll
 C:\Users\ronni\Desktop\microservice\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.pdb
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.csprojAssemblyReference.cache
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.csproj.CoreCompileInputs.cache
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.RazorAssemblyInfo.cache
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.RazorAssemblyInfo.cs
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.AssemblyInfoInputs.cache
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.AssemblyInfo.cs
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\bin\Debug\netcoreapp2.1\ProductCatalogApi.deps.json
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\bin\Debug\netcoreapp2.1\ProductCatalogApi.runtimeconfig.json
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\bin\Debug\netcoreapp2.1\ProductCatalogApi.runtimeconfig.dev.json
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\bin\Debug\netcoreapp2.1\ProductCatalogApi.dll
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\bin\Debug\netcoreapp2.1\ProductCatalogApi.pdb
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.RazorTargetAssemblyInfo.cache
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.dll
+C:\Users\ronfx\microservices\src\Services\ProductCatalogApi\obj\Debug\netcoreapp2.1\ProductCatalogApi.pdb

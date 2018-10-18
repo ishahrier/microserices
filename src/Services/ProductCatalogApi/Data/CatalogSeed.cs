@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ProductCatalogApi.Domain;
 
 namespace ProductCatalogApi.Data {
     public class CatalogSeed {
 
         public static async Task SeedAsync (CatalogContext context) {
+            context.Database.Migrate ();
             if (!context.CatalogBrands.Any ()) {
                 await context.CatalogBrands.AddRangeAsync (GetPreconfiguredCatalogBrands ());
             }

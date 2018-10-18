@@ -39,11 +39,13 @@ namespace ProductCatalogApi.Controllers {
 
         [HttpGet]
         [Route ("item/{id:int}")]
+
         public async Task<IActionResult> GetItemById (int id) {
             if (id <= 0) {
                 return BadRequest ();
             }
             var item = await CatalogDb.CatalogItems.FirstOrDefaultAsync ();
+
             if (item != null) {
                 item.PictureUrl = item.PictureUrl.Replace ("http://externalcatalogbaseurltobereplaced", Config.Value.ExternalCatalogBaseUrl);
                 return Ok (item);
@@ -63,7 +65,7 @@ namespace ProductCatalogApi.Controllers {
             var model = new PaginatedItemsViewModel<CatalogItem> (pageIndex, pageIndex, totalItem, itemsOnPage);
             return Ok (model);
         }
-            
+
         [HttpGet]
         [Route ("[action]/withname/{name:minlength(1)}")]
         public async Task<IActionResult> Items (string name, [FromQuery] int pageSize = 6, [FromQuery] int pageIndex = 0) {
@@ -137,12 +139,13 @@ namespace ProductCatalogApi.Controllers {
             var item = await CatalogDb.CatalogItems.SingleOrDefaultAsync (x => x.Id == id);
             if (item == null) return NotFound (new { Message = $"Item with id {id} doesn't exist." });
             CatalogDb.CatalogItems.Remove (item);
-            return NoContent();
+            return NoContent ();
 
         }
         private List<CatalogItem> ChangeUrlPlaceHolder (List<CatalogItem> items) {
             items.ForEach (x => x.PictureUrl = x.PictureUrl.Replace ("http://externalcatalogbaseurltobereplaced", Config.Value.ExternalCatalogBaseUrl));
             return items;
         }
+
     }
 }

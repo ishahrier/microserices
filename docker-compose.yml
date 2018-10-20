@@ -1,4 +1,3 @@
-
 version: "3.2"
 
 networks:
@@ -6,6 +5,22 @@ networks:
    backend:
 
 services:
+   webmvc :
+      build:
+         context: .\src\Web\WebMvc
+         dockerfile: Dockerfile
+      image: shoes/webmvc   
+      environment:
+         - ASPNETCORE_ENVIRONMENT=development
+         - CatalogUrl=http://catalog
+      container_name: webfront
+      ports:
+         - "5500:80"
+      networks:         
+         - frontend
+      depends_on:
+         - catalog         
+
    catalog:
       build:
          context: .\src\Services\ProductCatalogApi
